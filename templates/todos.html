@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <h1>Get It Done!</h1>
+
+   
+
+
+    {% if entries|length == 0 %}
+
+    <p>No tasks yet</p>
+
+    {% else %}
+    <ul>
+
+            {% for entry in entries %}
+    
+            <li><h3><a href="/blog?id={{entry.id}}">{{entry.title}}</a></h3></li>
+            <li>{{entry.body}}</li>
+            <hr>
+            {% endfor %}
+    
+        </ul>
+
+        
+
+
+
+    {% endif %}
+
+
+
+   
+
+
+
+{% endblock %}
