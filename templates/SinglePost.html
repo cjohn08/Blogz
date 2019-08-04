@@ -5,4 +5,5 @@
 {% block content %}
 <h3>{{IndividualPost.title}}</h3>
 {{IndividualPost.body}}
+Created By: <a href="/blog?user={{IndividualPost.owner_id}}">{{IndividualPost.owner.username}}</a>
 {% endblock %}

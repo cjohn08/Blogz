@@ -4,22 +4,23 @@
 
 {% block content %}
 
-    <h1>Get It Done!</h1>
+    <h1>Your Posts</h1>
 
    
 
 
-    {% if entries|length == 0 %}
+    {% if userposts|length == 0 %}
 
     <p>No tasks yet</p>
 
     {% else %}
     <ul>
 
-            {% for entry in entries %}
+            {% for entry in userposts %}
     
             <li><h3><a href="/blog?id={{entry.id}}">{{entry.title}}</a></h3></li>
             <li>{{entry.body}}</li>
+            <li>Created By: <a href="/blog?user={{entry.owner_id}}">{{entry.owner.username}}</a></li>
             <hr>
             {% endfor %}
     
@@ -30,11 +31,4 @@
 
 
     {% endif %}
-
-
-
-   
-
-
-
-{% endblock %}
+    {% endblock %}
